@@ -1,8 +1,3 @@
-Perfect! Here's your updated, clean `README.md` in full **copy-paste** format for GitHub—including all your edits and formatting:
-
----
-
-```markdown
 # 🧠 Multi-Format Document Classification & Processing System
 
 This project is a multi-agent AI system capable of classifying and processing input documents in various formats—**Email**, **JSON**, and **PDF**—and routing them to specialized agents based on **intent**. The system uses the **Groq API** for high-performance LLM completions and maintains context using an **SQLite-based shared memory**.
