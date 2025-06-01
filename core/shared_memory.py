@@ -6,9 +6,9 @@ from typing import Union, Dict, Any
 class SharedMemory:
     def __init__(self, use_file_db=False):
         if use_file_db:
-            self.conn = sqlite3.connect('shared_memory.db')
+            self.conn = sqlite3.connect('shared_memory.db',check_same_thread=False)
         else:
-            self.conn = sqlite3.connect(':memory:')  # In-memory for clean runs
+            self.conn = sqlite3.connect(':memory:',check_same_thread=False)  # In-memory for clean runs
         self._init_db()
         
     def _init_db(self):
@@ -63,4 +63,4 @@ class SharedMemory:
         self.conn.commit()
 
 # Initialize shared memory
-shared_memory = SharedMemory()
+shared_memory = SharedMemory()  #you can provide parameter use_file_db=True to use a file-based database

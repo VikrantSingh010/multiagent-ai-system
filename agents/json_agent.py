@@ -7,7 +7,6 @@ logger = logging.getLogger(__name__)
 
 
 def json_agent(payload: dict, conversation_id: str, intent: str) -> dict:
-    """JSON Agent - Processes structured JSON data"""
     context = shared_memory.get_last_extraction(conversation_id)
     
     system_prompt = (

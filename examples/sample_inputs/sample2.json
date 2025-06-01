@@ -1,0 +1,28 @@
+{
+    "sender": null,
+    "date": "32-13-2025",  
+    "intent": 404,
+    "invoice_id": "",
+    "line_items": [
+      {
+        "item": "Quantum Modulator X9",
+        "quantity": -5,  
+        "unit_cost": "free"  
+      },
+      {
+        "item": "",
+        "quantity": 3
+        
+      }
+    ],
+    "total": "Two Thousand Dollars",  
+    "currency": "USD",
+    "delivery_date": "yesterday",  
+    "comments": {
+      "text": "Please process this urgently.",
+      "attachments": "maybe later"  
+    },
+    "client_id": {},
+    "metadata": "should be object or list but its a string"
+  }
+  

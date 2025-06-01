@@ -1,0 +1,20 @@
+Invoice No: INV-2025-0042
+Date: 2025-05-31
+Customer: ACME Corp
+Items:
+  - Product: UltraWidget X200
+    Qty: 10
+    Unit Price: $250
+  - Product: SuperGadget Z3
+    Qty: 5
+    Unit Price: $400
+
+Subtotal: $3,500
+Tax (8.5%): $297.50
+Total: $3,700
+
+Notes:
+Please remit payment within 30 days.
+Contact: billing@acmecorp.com
+
+-- End of Invoice --

@@ -1,0 +1,22 @@
+From: procurement@glotechindustries.com  
+To: sales@vendorcorp.com  
+Subject: RFQ for Industrial Sensors  
+
+Dear VendorCorp Team,
+
+We are looking to procure 500 units of industrial-grade temperature sensors (model TS-500) for our upcoming IoT deployment. Please provide a detailed quotation including:
+
+- Unit price
+- Delivery timelines
+- Warranty details
+- Bulk order discount options
+
+Required delivery: Q3 2025  
+Budget Approval ID: BUDG-8493-ZXA
+
+Looking forward to your prompt response.
+
+Best regards,  
+Rakesh Mehra  
+Senior Procurement Officer  
+GloTech Industries

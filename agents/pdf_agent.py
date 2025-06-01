@@ -2,8 +2,9 @@ from PyPDF2 import PdfReader
 from io import BytesIO
 from agents.classifier_agent import classify_agent
 from agents.email_agent import email_agent
+import logging
+logger = logging.getLogger(__name__)
 def pdf_agent(pdf_bytes: bytes, conversation_id: str) -> dict:
-    """PDF Agent - Extracts text from PDF and processes it"""
     try:
         from PyPDF2 import PdfReader
         from io import BytesIO
@@ -13,14 +14,13 @@ def pdf_agent(pdf_bytes: bytes, conversation_id: str) -> dict:
         for page in reader.pages:
             page_text = page.extract_text() or ""
             text += page_text + "\n"
-            if len(text) > 10000:  # Limit extraction
+            if len(text) > 10000: 
                 break
         
-        # Classify content from text
+        
         classification = classify_agent(text[:2000])
         intent = classification.get("intent", "Unknown")
         
-        # Route to email agent for content extraction
         return email_agent(text, conversation_id, intent)
         
     except ImportError:

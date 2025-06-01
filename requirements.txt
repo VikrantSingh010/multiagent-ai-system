@@ -1,0 +1,10 @@
+groq
+steamlit
+PyPDF2
+json
+re
+logging
+Union 
+Dict
+Any
+sqlite3

@@ -1,0 +1,25 @@
+{
+  "request_id": "RFQ-9987",
+  "request_date": "2025-05-30T14:23:00Z",
+  "customer": {
+    "name": "Global Enterprises",
+    "contact_email": "procurement@globalent.com",
+    "priority": "high"
+  },
+  "items_requested": [
+    {
+      "product_code": "GX-5000",
+      "description": "High Precision Drill",
+      "quantity": 15
+    },
+    {
+      "product_code": "MX-120",
+      "description": "Industrial Mixer",
+      "quantity": 7
+    }
+  ],
+  "delivery": {
+    "required_by": "2025-06-15",
+    "location": "Warehouse 9, Sector 4, NY"
+  }
+}

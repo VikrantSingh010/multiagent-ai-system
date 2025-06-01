@@ -1,0 +1,12 @@
+{
+    "sender": "rahul@bytefusion.ai",
+    "intent": "RFQ",
+    "rfq_id": "RFQ-BF-2209",
+    "products_requested": [
+      {"product": "AI Edge Processor - QX100", "quantity": 100},
+      {"product": "Thermal Enclosure - TE45", "quantity": 50}
+    ],
+    "response_required_by": "2025-06-05",
+    "comments": "Please include shipping and bulk discount details"
+  }
+  

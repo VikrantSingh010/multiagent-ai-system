@@ -1,0 +1,16 @@
+From: support@logiflow.com  
+To: customer.care@megadevices.com  
+Subject: URGENT: Device overheating issue - Immediate Action Required  
+
+Dear Team,
+
+We’ve received 34 customer complaints within the last 48 hours regarding the XZ-800 routers overheating and shutting down randomly.  
+
+Devices affected were shipped under batch ID: XZ800-MAR-25-IND. This is a critical issue impacting SLA compliance.
+
+Please escalate and share root cause analysis along with replacement plan ASAP.
+
+Sincerely,  
+Nivedita Rao  
+Customer Support Manager  
+LogiFlow Networks

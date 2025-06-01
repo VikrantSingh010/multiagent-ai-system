@@ -1,36 +1,56 @@
 from core.groq_client import groq_completion
 from typing import Union, Dict, Any
 import json
-
-
 import logging
 
 logger = logging.getLogger(__name__)
 
+def is_json(content: str) -> bool:
+    try:
+        data = json.loads(content)
+        return isinstance(data, dict)
+    except json.JSONDecodeError:
+        return False
+
 def classify_agent(input_data: Union[str, bytes]) -> dict:
-    """Classifier Agent - Determines format and intent"""
-    # Check for PDF magic number
+
+
     if isinstance(input_data, bytes) and input_data.startswith(b'%PDF'):
         return {"format": "PDF", "intent": "Unknown"}
     
-    # Convert bytes to string if needed
     if isinstance(input_data, bytes):
         try:
-            content = input_data.decode('utf-8')[:2000]
+            content = input_data.decode('utf-8')
         except UnicodeDecodeError:
-            content = str(input_data)[:2000]
+            content = str(input_data)
     else:
-        content = str(input_data)[:2000]
+        content = str(input_data)
+
+
+    if is_json(content):
+        fmt = "JSON"
+    elif "From:" in content or "Subject:" in content or "Dear" in content:
+        fmt = "Email"
+    else:
+        fmt = "Unknown"
 
     system_prompt = (
-        "Classify input into format (PDF, JSON, Email) and intent "
-        "(Invoice, RFQ, Complaint, Regulation, Other). Output JSON with keys: 'format', 'intent'."
+        "Identify the intent of this input. "
+        "Possible intents: Invoice, RFQ, Complaint, Regulation, Other. "
+        "Output JSON with key: 'intent'"
     )
-    prompt = f"Input:\n{content}\n\nAnalysis:"
+    prompt = f"Input:\n{content[:2000]}\n\nAnalysis:"
+
     try:
         raw = groq_completion(prompt, system_prompt, response_format="json")
-        result = json.loads(raw)
-        return result
+        intent_result = json.loads(raw)
+        return {
+            "format": fmt,
+            "intent": intent_result.get("intent", "Other")
+        }
     except Exception as e:
         logger.error(f"Classification error: {e}")
-        return {"format": "Email", "intent": "Other"}
+        return {
+            "format": fmt,
+            "intent": "Other"
+        }
