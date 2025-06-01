@@ -9,11 +9,12 @@ st.title("📂 Multi-Agent File Processor")
 if "result" not in st.session_state:
     st.session_state.result = None
 
-# File uploader
-uploaded_file = st.file_uploader("Choose a file (.json, .pdf, .txt)", type=["json", "pdf", "txt"])
+# Sidebar controls
+st.sidebar.header("🔧 File Processor Controls")
+uploaded_file = st.sidebar.file_uploader("📁 Choose a file (.json, .pdf, .txt)", type=["json", "pdf", "txt"])
 
-# Process File button
-if st.button("Process File") and uploaded_file:
+# Process File button in sidebar
+if st.sidebar.button("🚀 Process File") and uploaded_file:
     file_bytes = uploaded_file.read()
     file_name = uploaded_file.name.lower()
 
@@ -27,16 +28,16 @@ if st.button("Process File") and uploaded_file:
         elif file_name.endswith(".pdf"):
             result = process_input(file_bytes, clear_memory=True)
         else:
-            st.error("Unsupported file type.")
+            st.sidebar.error("❌ Unsupported file type.")
             result = None
 
         st.session_state.result = result  # store result in session state
 
     except Exception as e:
-        st.error(f"🚨 Error processing file: {str(e)}")
+        st.sidebar.error(f"🚨 Error processing file: {str(e)}")
         st.session_state.result = None
 
-# Show Output button
-if st.session_state.result and st.button("Show Output"):
+# Show Output button in sidebar
+if st.session_state.result and st.sidebar.button("📤 Show Output"):
     st.subheader("🧾 Output")
     st.json(st.session_state.result)
