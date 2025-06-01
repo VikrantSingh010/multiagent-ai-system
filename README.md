@@ -10,7 +10,7 @@ This project is a multi-agent AI system capable of classifying and processing in
 - ✅ **Intent classification** (Invoice, RFQ, Complaint, Regulation, Other)  
 - ✅ **Specialized agents** for Email, JSON, and PDF  
 - ✅ **Context-aware processing** via shared memory  
-- ✅ **LLM-powered extraction** using Groq’s `llama3-70b-8192`  
+- ✅ **LLM-powered extraction** using Groq’s `llama3-70b-8192`  "You can use other llm based on your choice"
 - ✅ **Urgency detection** in Emails  
 - ✅ **Schema-based extraction** with anomaly detection  
 
@@ -32,7 +32,8 @@ This project is a multi-agent AI system capable of classifying and processing in
 ├── orchestrator/
 │   └── process_input.py
 ├── examples/
-│   ├── samples.ext
+│   ├── sample_inputs
+│   ├── sample_outputs
 ├── main.py
 ├── app.py
 ├── .env
@@ -50,7 +51,7 @@ This project is a multi-agent AI system capable of classifying and processing in
 
 ```bash
 git clone https://github.com/VikrantSingh010/multiagent-ai-system.git
-cd MULTIAGENTAI
+cd multi-agent-ai-system
 ````
 
 ### 2. Install Dependencies
@@ -70,18 +71,22 @@ Replace `"Your Groq API Key"` with your actual Groq API key inside the `.env` fi
 You can run sample inputs via `main.py`.
 
 ```bash
-python main.py
+python main.py 
 ```
 
 * Modify the file to uncomment the type of input (JSON, PDF, Email) you want to test.
 * Input sample files are provided inside `MULTIAGENTAI/examples/`.
 * You can also run `agents.ipynb` for interactive testing.
 
+ # Or launch the UI version using Streamlit:  
+ ```bash
+streamlit run app.py
+```
 ---
 
 ## 🖥️ Sample Output
 
-Sample outputs are provided in the `MULTIAGENTAI/Output` folder.
+Sample outputs are provided in the `multiagent-ai-system/examples/sample_outputs` folder.
 
 ---
 
